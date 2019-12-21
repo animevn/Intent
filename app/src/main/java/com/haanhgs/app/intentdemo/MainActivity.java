@@ -6,10 +6,14 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.haanhgs.app.intentdemo.SecondActivity.REPLY;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendMessage(){
-
         if (!TextUtils.isEmpty(etMessage.getText())){
             Intent intent = new Intent(this, SecondActivity.class);
             intent.putExtra(SEND, etMessage.getText().toString());
@@ -45,5 +48,13 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.bnSend)
     public void onViewClicked() {
         sendMessage();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SEND_REQUEST && resultCode == RESULT_OK && data != null){
+            tvMain.setText(data.getStringExtra(REPLY));
+        }
     }
 }
