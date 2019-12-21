@@ -1,6 +1,8 @@
 package com.haanhgs.app.intentdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -8,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import static com.haanhgs.app.intentdemo.MainActivity.SEND;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -17,16 +20,32 @@ public class SecondActivity extends AppCompatActivity {
     EditText etReply;
     @BindView(R.id.bnReply)
     Button bnReply;
+    public static final String REPLY = "reply";
+
+    private void receiveIntent(){
+        Intent intent = getIntent();
+        tvSecond.setText(intent.getStringExtra(SEND));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         ButterKnife.bind(this);
+        receiveIntent();
+    }
 
+    private void replyMessage(){
+        Intent replyIntent = new Intent();
+        if (!TextUtils.isEmpty(etReply.getText())){
+            replyIntent.putExtra(REPLY, etReply.getText().toString());
+            setResult(RESULT_OK, replyIntent);
+            finish();
+        }
     }
 
     @OnClick(R.id.bnReply)
     public void onViewClicked() {
+        replyMessage();
     }
 }
