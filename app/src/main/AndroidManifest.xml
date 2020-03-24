@@ -14,15 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.haanhgs.app.intent.SecondActivity"
-            android:parentActivityName="com.haanhgs.app.intent.MainActivity"
+            android:name="com.haanhgs.app.intent.view.SecondActivity"
+            android:parentActivityName="com.haanhgs.app.intent.view.MainActivity"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.haanhgs.app.intent.MainActivity" />
+                android:value="com.haanhgs.app.intent.view.MainActivity" />
         </activity>
 
-        <activity android:name="com.haanhgs.app.intent.MainActivity">
+        <activity android:name="com.haanhgs.app.intent.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
