@@ -1,4 +1,4 @@
-package com.haanhgs.app.intentdemo;
+package com.haanhgs.app.intentdemo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,11 +6,14 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.haanhgs.app.intentdemo.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import static com.haanhgs.app.intentdemo.MainActivity.SEND;
+import static com.haanhgs.app.intentdemo.view.MainActivity.SEND;
 
 public class SecondActivity extends AppCompatActivity {
 
