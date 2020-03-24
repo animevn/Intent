@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.haanhgs.app.intentdemo">
+    package="com.haanhgs.app.intent">
 
     <dist:module dist:instant="true" />
 
@@ -14,15 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.SecondActivity"
-            android:parentActivityName=".view.MainActivity"
+            android:name="com.haanhgs.app.intent.SecondActivity"
+            android:parentActivityName="com.haanhgs.app.intent.MainActivity"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.haanhgs.app.intentdemo.view.MainActivity" />
+                android:value="com.haanhgs.app.intent.MainActivity" />
         </activity>
 
-        <activity android:name=".view.MainActivity">
+        <activity android:name="com.haanhgs.app.intent.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

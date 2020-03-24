@@ -1,4 +1,4 @@
-package com.haanhgs.app.intentdemo.view;
+package com.haanhgs.app.intent;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,14 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.haanhgs.app.intentdemo.R;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import static com.haanhgs.app.intentdemo.view.SecondActivity.REPLY;
+import static com.haanhgs.app.intent.SecondActivity.REPLY;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, SecondActivity.class);
             intent.putExtra(SEND, etMessage.getText().toString());
             startActivityForResult(intent, SEND_REQUEST);
-
             tvMain.setText("");
             etMessage.setText("");
         }

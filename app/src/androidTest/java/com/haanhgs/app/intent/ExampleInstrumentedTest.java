@@ -1,4 +1,4 @@
-package com.haanhgs.app.intentdemo;
+package com.haanhgs.app.intent;
 
 import android.content.Context;
 
